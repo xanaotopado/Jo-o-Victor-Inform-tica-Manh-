@@ -1,0 +1,143 @@
+body {
+  background-color: rgb(235, 204, 166);
+  margin: 0;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+header {
+  top: 0;
+  background-color: black;
+  display: flex;
+  position: fixed;
+  height: 60px;
+  width: 100%;
+  border: 2px solid black;
+  padding: 10px;
+  align-items: center;
+  justify-content: space-around;
+  z-index: 10;
+}
+
+.nv1 {
+  font-size: 20px;
+  color: white;
+  font-weight: bold;
+}
+
+.lk {
+  color: white;
+  text-decoration: none;
+}
+
+.lk:hover {
+  text-decoration: underline;
+  font-size: 17px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  margin-left: 20px;
+}
+
+main {
+  margin-top: 80px; 
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 15px;
+  padding: 20px;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+}
+
+.imagem {
+  width: 100%;
+  aspect-ratio: 1 / 1; /* quadrado */
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+.imagem img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  cursor: pointer;
+  transition: transform 0.35s ease, opacity 0.25s ease;
+}
+
+.imagem img:hover {
+  transform: scale(1.03);
+  opacity: 0.95;
+}
+
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0,0,0,0.9);
+  z-index: 999;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.modal-conteudo {
+  max-width: 90%;
+  max-height: 80%;
+  border-radius: 8px;
+}
+
+.fechar {
+  position: absolute;
+  top: 20px;
+  right: 35px;
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.fechar:hover {
+  color: #ccc;
+}
+
+#caption {
+  margin-top: 12px;
+  color: #fff;
+  text-align: center;
+  max-width: 90%;
+}
+
+
+@media (max-width: 900px) {
+  main {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 700px;
+  }
+}
+
+@media (max-width: 480px) {
+  main {
+    grid-template-columns: repeat(1, 1fr);
+    padding: 12px;
+  }
+
+  header {
+    padding: 8px;
+  }
+
+  .nv1 {
+    font-size: 18px;
+  }
+}
